@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <!-- Your header content here -->
+</header>
+
+<main class="container mt-5">
+    <h1>Create Task</h1>
+    <form th:action="@{'/createtask/' + ${projectId}}" method="post" th:object="${task}">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" th:field="*{name}" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" th:field="*{description}" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" class="form-control" th:field="*{priority}">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="deadline">Deadline:</label>
+            <input type="text" id="deadline" name="deadline" th:field="*{deadline}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" class="form-control" th:field="*{status}">
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="assignedUser">Assigned User:</label>
+            <select id="assignedUser" name="assignedUser" class="form-control" required>
+                <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.username}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Create Task</button>
+        </div>
+    </form>
+
+</main>
+
+<footer class="text-center mt-5">
+    &copy; 2023 Jami Juhola
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

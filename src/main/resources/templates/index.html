@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management Application</title>
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/index">ProjectControl</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Users">Users</a>
+            </li>
+        </ul>
+        <a th:href="@{/logout}" class="logout-link">Logout</a>
+    </nav>
+</header>
+
+
+
+<main class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to ProjectControl</h1>
+        <p class="lead">Your one-stop solution for managing projects and users.</p>
+        <hr class="my-4">
+        <p>Get started with our powerful tools to streamline your project management process.</p>
+        <a class="btn btn-primary btn-lg" href="/projects" role="button">View Projects</a>
+        <a class="btn btn-secondary btn-lg" href="/Users" role="button">View Users</a>
+    </div>
+</main>
+
+<footer class="text-center mt-5">
+    &copy; 2023 Jami Juhola
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

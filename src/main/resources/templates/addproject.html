@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <!-- Your header content here -->
+</header>
+
+<main class="container mt-5">
+    <h1>Add Project</h1>
+    <form th:object="${newProject}" th:action="@{/addproject}" method="post">
+        <div class="form-group">
+            <label for="name">Project Name</label>
+            <input type="text" class="form-control" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="text" class="form-control" id="startDate" name="startDate" required />
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input type="text" class="form-control" id="endDate" name="endDate" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add Project" class="btn btn-primary">
+        </div>
+    </form>
+    <a th:href="@{/projects}" class="btn btn-secondary">Back to projects</a>
+</main>
+
+<footer class="text-center mt-5">
+    &copy; 2023 Jami Juhola
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

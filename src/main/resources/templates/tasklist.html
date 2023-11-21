@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/index">ProjectControl</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Users">Users</a>
+            </li>
+        </ul>
+        <a th:href="@{/logout}" class="logout-link">Logout</a>
+    </nav>
+</header>
+
+
+
+<main class="container mt-5">
+    <h1>Task List for Project: <span th:text="${project.name}"></span></h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Deadline</th>
+            <th>Status</th>
+            <th>Assigned User</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.name}"></td>
+            <td th:text="${task.description}"></td>
+            <td th:text="${task.priority}"></td>
+            <td th:text="${task.deadline}"></td>
+            <td th:text="${task.status}"></td>
+            <td th:text="${task.assignedUser.username}"></td>
+            <td>
+                <a th:href="@{'/edittask/' + ${task.id}}" class="btn btn-primary">Edit</a>
+                <a th:href="@{'/deletetask/' + ${task.id}}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <form th:action="@{'/createtask/' + ${project.id}}" method="get">
+        <button type="submit" class="btn btn-success">Create Task</button>
+    </form>
+    <a th:href="@{/logout}" class="btn btn-primary">Logout</a>
+    <a th:href="@{/index}" class="btn btn-secondary">Home page</a>
+    <a th:href="@{/projects}" class="btn btn-primary">Projects</a>
+</main>
+
+<footer class="text-center mt-5">
+    &copy; 2023 Jami Juhola
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

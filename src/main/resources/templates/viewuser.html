@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/index">ProjectControl</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Users">Users</a>
+            </li>
+        </ul>
+        <a th:href="@{/logout}" class="logout-link">Logout</a>
+    </nav>
+
+</header>
+
+<div class="container mt-5">
+    <h1>User Details</h1>
+    <table class="table">
+        <tr>
+            <td><strong>Username:</strong></td>
+            <td><span th:text="${appUser.username}"></span></td>
+        </tr>
+        <tr>
+            <td><strong>First Name:</strong></td>
+            <td><span th:text="${appUser.firstName}"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Last Name:</strong></td>
+            <td><span th:text="${appUser.lastName}"></span></td>
+        </tr>
+        <tr>
+            <td><strong>Role:</strong></td>
+            <td>
+                <span th:each="role : ${appUser.roles}" th:text="${role}"></span>
+            </td>
+        </tr>
+
+    </table>
+
+    <h2>Projects:</h2>
+    <ul th:if="${projects != null}">
+        <li th:each="project : ${projects}">
+            <span th:text="${project.name}"></span> - <span th:text="${project.description}"></span>
+        </li>
+    </ul>
+
+    <h2>Tasks:</h2>
+    <ul th:if="${tasks != null}">
+        <li th:each="task : ${tasks}">
+            <span th:text="${task.name}"></span> - <span th:text="${task.description}"></span>
+        </li>
+    </ul>
+</div>
+
+<footer class="text-center mt-5">
+    &copy; 2023 Jami Juhola
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

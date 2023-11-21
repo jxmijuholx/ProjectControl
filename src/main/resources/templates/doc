@@ -1,0 +1,53 @@
+https://github.com/jxmijuholx/ProjectControl.git
+1.10.2023
+Loin projektin alustan
+projekti entityn
+Index sivu
+Projektilistaussivu
+CommandLine esimerkki projekti
+CRUD aluilleen
+TEIN KOODIN DATABASES 1 moodlen perusteella
+koodasin tehtävän 3.1 ja 3.2 mukaan
+jatka tehtävästä 3.3
+
+1.10.2023
+add project nappi
+delete project nappi
+edit project nappi
+
+2.10.2023
+Loin Task entityn
+Loin User entityn
+Yhdistin kaikki entityt toisiinsa
+TIETOKANTAPOHJA RAKENNETTU
+
+TASKLISTIN RAKENNUS XX
+
+3.10.23
+Tasklistin rakennus =>
+- add task
+- edit task
+- delete task
+- yhteys projektiin
+
+27.10.2023
+-Userlist rakennus
+
+28.10.23
+- CRUD OMINAISUUDET USEREIHIN
+
+31.10.23
+- Userin ja Taskin yhdistäminen
+- Userin ja Projectin yhdistäminen
+- Userin CRUD jatkoa
+--> seuraavaksi tulisi suunnitella käyttöliittymää tarkemmin ja ketkä voivat muokata ja lisätä ja mitä yms.
+koska tällä hetkellä sovellusken CRUD ominaisuudet ovat valmiit, mutta ne vaativat paljon hiomista ja tarkentamista
+-- > Kaiken kaikkiaan sivujen rakenne pitäisi miettiä kunnolla ja tehdä niistä selkeämmät ja helpommat käyttää
+
+7.11.2023
+- sivun toiminnallisuuksien parantamista
+- seuraavaksi:
+    websecurityn muokkaaminen siten, että user saa katsella kaikkia mutta muokata vain taskeja
+    jokaiselle projektille oma sivu
+    login page kuntoon
+    rekisteröinti toimivaksi
